@@ -2,6 +2,7 @@ const express = require('express')
 const app = express()
 
 const basketsRouter = require('./routes/baskets')
+const reviewsRouter = require('./routes/reviews')
 
 const PORT = 8080
 app.use(express.json())
@@ -21,6 +22,7 @@ app.get('/about/students/:studentId', (req, res) => {
 })
 
 app.use('/baskets', basketsRouter)
+app.use('/reviews', reviewsRouter)
 
 app.listen(PORT)
 
